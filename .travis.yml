@@ -3,8 +3,11 @@ python:
   - "3.5"
 
 install:
-  - pip install tox
+  - pip install tox==1.9.0
+  - pip install coveralls
 script:
   - tox
 env:
   - TOXENV=py35
+
+after_success: coveralls
